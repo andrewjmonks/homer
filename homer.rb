@@ -6,7 +6,7 @@ require 'data_mapper'
 set :haml, :format => :html5
 
 
-DataMapper.setup(:default, (ENV["DATABASE_URL"])
+DataMapper.setup(:default, (ENV["DATABASE_URL"] || "sqlite3:///#{Dir.pwd}/development.sqlite3"))
 
 class Memory
 	include DataMapper::Resource
