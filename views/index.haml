@@ -1,4 +1,25 @@
-%h2 Author
-= @memory.author
-%h2 Body
-= @memory.body
+%h2
+	Homer helps you remember things.
+%h3
+	Remember something new.
+%form{:method=>"post"}
+	I am
+	%input{:type=>"text", :name=>"author", :id=>"author", :value=>"Homer"}
+	%br
+	and I want to remember
+	%br
+	%textarea{:name=>"body", :id=>"body"}
+		Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.
+	%br
+	which is
+	%input{:type=>"text", :name=>"title", :id=>"title", :value=>"The beginning of the Odyssey"}
+	%br
+	%input(type="submit")
+	%input(type="reset")
+%h3
+	Or, recall something old.
+%ul
+	- @memories.each do |memory|
+		%li 
+			%a(href="/memories/#{memory.memoryid}/")
+				#{memory.title}

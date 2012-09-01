@@ -1,0 +1,10 @@
+%form{:method=>"post"}
+	My name is...
+	%input{:type=>"text", :name=>"author", :id=>"author"}
+	%br
+	And #{@memory.title} is...
+	%br
+	%textarea{:name=>"body", :id=>"body"}
+	%br
+	%input(type="submit")
+	%input(type="reset")
