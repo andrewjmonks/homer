@@ -1,0 +1,20 @@
+%h2
+	History
+- @memories.each do |memory|
+	%h3
+		#{memory.title}
+	%dl
+		- memory.recollections(:order => [ :recollectionid.desc]).each do |recollection|
+			- if recollection.viewed == true
+				#viewed
+					%dt
+						Hidden recollection by #{recollection.author} on #{recollection.created_at};
+					%dd
+						%p
+							= recollection.body
+			- else
+				%dt
+					Unread recollection by #{recollection.author} on #{recollection.created_at};
+				%dd
+					%p
+						= recollection.body
