@@ -16,10 +16,15 @@
 	%br
 	%input(type="submit")
 	%input(type="reset")
-%h3
-	Or, recall something old.
-%ul
-	- @memories.each do |memory|
-		%li 
-			%a(href="/memories/#{memory.memoryid}/")
-				#{memory.title}
+#{@show}
+- if @memories.count == 0
+	%h3
+		Nothing to recall.
+- else
+	%h3
+		Or, recall something old.
+	%ul
+		- @memories.each do |memory|
+			%li 
+				%a(href="/memories/#{memory.memoryid}/")
+					#{memory.title}

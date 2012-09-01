@@ -4,8 +4,16 @@
 		%title Homer
 	%body
 		#header
-			%h1 Homer
+			%a(href="/")
+				%h1 Homer
 		#content
 			=yield
+		#about
+			%p
+				The brain is often compared to a computer. What if computers worked like your brain? Every time your brain calls back a memory, it's really remembering the last time you remembered it. Therefore, the more times you think about a memory, the faster it degrades and changes.
+			%p
+				Homer is an experiment that remembers things in the same way the brain does. Homer can remember things, but after every time you look at something it's remembering for you, you have to rewrite it again from memory.
+			%p
+				It's like how back in the day, stories were memorized and passed along orally rather than written down. Each person who heard it remembered it their own way, and thus they changed slightly over time. Hence the name, Homer. After the Greek guy.
 		#footer
 			&copy; 2012 Andrew Monks
