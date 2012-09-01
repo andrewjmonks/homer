@@ -6,7 +6,7 @@ require 'data_mapper'
 set :haml, :format => :html5
 
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_AMBER_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
 
 class Memory
 	include DataMapper::Resource
