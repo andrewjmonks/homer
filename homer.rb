@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'dm-core'
-require 'dm-migrations'
+require 'data_mapper'
 
 set :haml, :format => :html5
 
