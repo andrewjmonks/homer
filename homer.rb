@@ -1,4 +1,4 @@
 require 'sinatra'
-get '/hi' do 
+get '/' do 
 	"Homer!"
 end
