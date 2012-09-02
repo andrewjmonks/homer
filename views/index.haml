@@ -1,21 +1,14 @@
 %h3
 	Remember something new.
 %form{:method=>"post"}
-	%div{:class => "grid_6 alpha"}
-		I am
-	%div{:class =>"grid_6 omega text"}
-		%input{:type=>"text", :name=>"author", :id=>"author", :value=>"Homer"}
-	%div{:class => "grid_6 alpha"}
-		and I want to remember
-	%div{:class =>"grid_6 omega"}
-		%textarea{:name=>"body", :id=>"body"}
-			Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.
-	%div{:class => "grid_6 alpha"}
-		which is
-	%div{:class=>"grid_6 omega text"}
-		%input{:type=>"text", :name=>"title", :id=>"title", :value=>"The beginning of the Odyssey"}
-	%input(type="submit")
-	%input(type="reset")
+	I am
+	%input.formstyle{:type=>"text", :name=>"author", :id=>"author", :value=>"Homer"}
+	and I want to remember
+	%textarea.formstyle{:name=>"body", :id=>"body"}
+		Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.
+	which is
+	%input.formstyle{:type=>"text", :name=>"title", :id=>"title", :value=>"The beginning of the Odyssey"}
+	%input(type="submit" value="remember")
 #{@show}
 - if @memories.count == 0
 	%h3
@@ -28,3 +21,4 @@
 			%li 
 				%a(href="/memories/#{memory.memoryid}/")
 					#{memory.title}
+				&nbsp;by #{memory.recollections.first.author}
