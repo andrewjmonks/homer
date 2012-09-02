@@ -1,7 +1,7 @@
-#{@memory.title}, originally by #{@originalauthor}
-%br
-last remembered by #{@recollection.author}
-%p
+%h3
+	#{@memory.title}
+originally by #{@originalauthor}, last remembered by #{@recollection.author}
+%p.memory
 	#{@recollection.body}
 %a(href="save")
 	keep remembering this
