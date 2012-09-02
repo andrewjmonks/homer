@@ -32,6 +32,11 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
+
+get '/style.css' do
+	sass :style
+end
+
 get '/' do
 	@memories = Memory.all(Memory.recollections.viewed => nil)
 	haml :index
