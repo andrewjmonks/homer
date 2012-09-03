@@ -1,4 +1,4 @@
-subrequire 'rubygems'
+require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'data_mapper'
